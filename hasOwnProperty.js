@@ -5,7 +5,7 @@ var obj = {
     name:'xiaoming',
 }
 let a = obj.hasOwnProperty('name')
-console.log(a);
+console.log(a);//会报错 TypeError: obj.hasOwnProperty is not a function
 
 
 //遍历window自身属性描述符
