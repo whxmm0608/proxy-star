@@ -13,3 +13,4 @@ Object.keys(window).forEach(p => {
     const b = Object.getOwnPropertyDescriptor(window, p);
     console.log(p, b);
 })
+
