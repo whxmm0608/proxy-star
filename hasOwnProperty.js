@@ -5,12 +5,18 @@ var obj = {
     name:'xiaoming',
 }
 let a = obj.hasOwnProperty('name')
-console.log(a);//会报错 TypeError: obj.hasOwnProperty is not a function
+// console.log(a);//会报错 TypeError: obj.hasOwnProperty is not a function
+
+Object.keys(obj).forEach(key => {
+    const descriptor = Object.getOwnPropertyDescriptor(obj, key);
+    console.log(key, descriptor);
+})
 
 
-//遍历window自身属性描述符
-Object.keys(window).forEach(p => {
-    const b = Object.getOwnPropertyDescriptor(window, p);
+
+//遍历window(node钟全局变量为global)自身属性描述符
+Object.keys(global).forEach(p => {
+    const b = Object.getOwnPropertyDescriptor(global, p);
     console.log(p, b);
 })
 
